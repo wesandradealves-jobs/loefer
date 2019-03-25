@@ -1,0 +1,67 @@
+.pg-interna
+	#wrap
+		main 
+			background-color: white
+			.content
+				padding: 65px 0
+				>.container 
+					@extend .flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					align-items: stretch
+					.container
+						padding: 0
+					aside 
+						flex: 0 0 auto 
+						width: 312px
+						padding-right: 15px
+						+mq(870px, max)
+							width: 100% 
+							padding-right: 0
+							padding-bottom: 15px
+					> div 
+						flex: 1
+						&:not(:only-child)
+							padding-left: 15px
+							+mq(870px, max)
+								padding-left: 0
+	&.pg-single
+		#wrap
+			main 
+				background-color: white
+				.content
+					padding: 65px 0 35px
+	&.pg-produtos,
+	&.pg-archive,
+	&.pg-category
+		.vitrine 
+			padding: 0
+			ul 
+				>li 
+					width: 33.3333%
+					+mq(870px, max)
+						width: 50%
+						+mq(640px, max)
+							width: 100%						
+					padding-left: 15px 
+					padding-right: 15px
+
+.mobile-navigation
+	width: 100%
+	.navigation
+		display: none 
+		&.toggle 
+			display: block
+	ul 
+		width: 100%
+		display: block
+		>li 
+			display: block 
+			padding: 12px
+			+rem('font-size', 14px)
+			background-color: $red 
+			color: white
+			&:last-child 
+				display: none
+			> ul 
+				display: none

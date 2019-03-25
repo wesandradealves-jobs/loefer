@@ -1,0 +1,36 @@
+.pg-single
+	.box
+	    padding: 6px 12px
+	    +shadow(0px,0px,0px,1px,lightgray)
+	    border-top: none
+	    margin-bottom: 35px
+	    h3 
+		    overflow: hidden
+		    color: black 
+		    display: block
+		    border: 1px solid #ccc
+		    background-color: #f1f1f1	
+		   	+rem('font-size', 15px)
+		   	font-weight: bold
+		    span 
+    			padding: 14px 16px
+			    display: inline-block
+    			background-color: #ccc
+    	div 
+    		padding: 15px 0
+    		p 
+    			+rem('font-size', 14px)
+
+.galeria
+	flex-flow: row wrap
+	align-items: center 
+	justify-content: flex-start
+	@extend .flex
+	a 
+		flex: 1
+		margin-right: 15px
+		max-width: 25%
+		img
+		    width: auto
+		    max-height: 100px
+		    max-width: 100%		

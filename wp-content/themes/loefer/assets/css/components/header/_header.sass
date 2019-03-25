@@ -1,0 +1,83 @@
+.header
+	background-color: white
+	+rem('font-size', 14px)
+	text-transform: uppercase
+	p i 
+		display: inline-block 
+		vertical-align: middle 
+		top: -1px
+	.navigation
+		>ul 
+			align-items: center
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: flex-start 
+			> li 
+				position: relative
+				&:hover ul 
+					display: block
+				&.current
+					>a 
+						color: $red
+				>ul 
+					border: 1px $whitesmoke solid
+					background-color: $whitesmoke
+					display: none
+					position: absolute
+					top: 100%
+					left: 0
+					width: 220px
+					z-index: 10
+					> li 
+						display: block 
+						+rem('font-size', 13px)
+						padding: 4px 12px
+						overflow: hidden
+						text-overflow: ellipsis
+						text-align: left
+						word-wrap: nowrap
+						&:hover
+							background-color: white 
+							color: red
+				&:not(:last-child)
+					padding: 4px 15px
+				&:last-child
+					display: none
+				&:hover
+					>a 
+						color: $red
+				+mq(870px, max)
+					&:not(:last-child)
+						display: none
+					&:last-child
+						display: block
+	.container
+		padding-top: 30px
+		padding-bottom: 10px
+		+mq(870px, max)
+			padding-top: 10px
+		>div
+			align-items: flex-end
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			+mq(870px, max)
+				align-items: center 
+				justify-content: center
+			> * 
+				flex: 1
+				&:last-child
+					text-align: right
+					+mq(870px, max)
+						display: none
+				&:first-child
+					flex: 0 0 auto 
+			&:last-child
+				align-items: center
+				padding-top: 15px
+				+mq(870px, max)
+				    position: absolute
+				    top: calc(50% - 25px)
+				    right: 15px
+				    z-index: 2
+				    height: 0

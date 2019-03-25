@@ -1,0 +1,10 @@
+# Ignorar dists se houver
+dist/
+# Ignorar a pasta de módulos da npm
+node_modules/
+# Ignorar package-locks
+package-lock.json
+wp-admin/
+wp-includes/
+wp-plugins/
+wp-uploads/

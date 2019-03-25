@@ -1,0 +1,206 @@
+textarea,
+input
+    &[placeholder]
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 969px
+    margin: 0 auto
+    padding-left: 45px
+    padding-right: 45px
+    +mq(870px, max)
+        padding-left: 15px
+        padding-right: 15px
+
+body,html
+    color: $gray
+    min-height: 100vh
+    width: 100%
+    #wrap
+        min-height: inherit   
+        overflow: hidden
+        width: inherit
+        @extend .flex 
+        flex-flow: column wrap 
+        justify-content: flex-start
+        align-items: flex-start
+        header, footer, main 
+            width: inherit
+        main 
+            background-color: lighten($whitesmoke, 5%)
+            flex: 1
+
+.logo 
+    img,svg
+        display: block
+        height: auto
+        max-width: 100%
+
+.webdoor
+    align-items: flex-start
+    background-attachment: fixed 
+    background-position: bottom center 
+    background-repeat: no-repeat
+    background-size: cover
+    &::after 
+        position: absolute
+        display: block 
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        content: ''
+        background-color: transparentize($red, .6)
+    .container
+        @extend .flex 
+        flex-flow: row wrap
+        justify-content: space-between
+        align-items: center
+        height: 220px 
+        z-index: 2
+        h2 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4)
+            word-break: break-word
+            color: #fff
+            font-family: 'Montserrat',sans-serif
+            +rem('font-size', 60px)
+            +mq(814px, max) 
+                +rem('font-size', 45px)
+                +mq(568px, max)
+                    +rem('font-size', 32px)
+            letter-spacing: -2px
+            z-index: 2
+            max-width: 50%
+            overflow: hidden 
+            text-overflow: ellipsis
+            display: block
+            white-space: nowrap
+            padding-right: 30px
+            flex: 0 0 auto
+            +mq(640px, max)
+                width: 100%
+                overflow: initial
+                text-overflow: initial 
+                max-width: initial 
+                text-align: center
+                white-space: initial
+                word-break: break-word
+                padding-right: 0
+        .breadcrumbs
+            +mq(640px, max)
+                display: none
+            >li
+                &:not(:last-child)
+                    &::after 
+                        content: '>'
+                        display: inline-block 
+                        vertical-align: middle 
+                        margin: 0 8px
+            align-items: center 
+            color: white
+            +rem('font-size', 14px)
+            @extend .flex
+            flex-flow: row wrap 
+            justify-content: space-between        
+
+.owl-carousel
+    .owl-dots
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 2
+        width: 100%
+        @extend .flex
+        flex-flow: row wrap
+        justify-content: center
+        align-items: center
+        padding-bottom: 20px
+        .owl-dot 
+            background-color: white
+            display: block 
+            height: 4px
+            min-width: 70px    
+            margin: 0 5px
+            &.active
+                background-color: $red 
+
+.btn 
+    text-transform: uppercase
+    text-align: center
+    +rem('font-size', 16px)
+    padding: 5px
+    display: inline-block
+    +border(999px)
+    &.btn-1
+        background-color: $red
+        color: white
+        &:hover
+            background-color: lighten($red, 8%)
+
+.contactform 
+    .btn
+        cursor: pointer
+        display: block 
+        border-radius: 15px 15px 0px 15px
+        +rem('font-size', 20px)
+        padding: 8px
+        font-weight: bold
+    span
+        display: block 
+        margin-bottom: 10px
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea 
+        padding: 4px 6px 
+        +rem('font-size', 14px)
+        color: $gray 
+        border: 1px $lightgray solid
+        width: 100%
+        overflow: hidden 
+        resize: none 
+    textarea 
+        height: 90px 
+    label 
+        +rem('font-size', 15px)
+        font-weight: bold 
+    label
+        display: block 
+        margin-bottom: 4px                
+    .checkbox 
+        display: inline-block 
+        vertical-align: middle 
+        margin-right: 10px
+        margin-bottom: 5px 
+        > input,
+        > label
+            display: inline-block 
+            vertical-align: middle
+            margin-bottom: 0
+        > label 
+            display: inline-block 
+            margin-bottom: 0
+            margin-right: 5px
